@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { appleImg } from "@/utils";
+import { appleImg, searchImg, bagImg, appleGreyImg } from "@/utils";
 
 const Navbar = () => {
   const navItems = [
@@ -15,19 +15,18 @@ const Navbar = () => {
     "Support",
   ];
   return (
-    <header className="w-full">
-      <nav className="flex">
-        <Image src={appleImg.src} width={14} height={18} alt="Apple" />
+    <header className="w-full px-8 py-4 text-[11.5px]">
+      <nav className="flex justify-between items-center">
+        <Image src={appleGreyImg.src} width={14} height={18} alt="Apple" />
 
-        <ul className="flex justify-center items-center">
-            {navItems.map((navItem) => (
-                <li key={navItem}>
-                    {navItem}
-                </li>
-            ))}
-        </ul>
+        {navItems.map((navItem) => (
+          <div className="cursor-pointer text-gray-200" key={navItem}>
+            {navItem}
+          </div>
+        ))}
 
-
+        <Image className="cursor-pointer" src={searchImg.src} width={14} height={18} alt="search" />
+        <Image className="cursor-pointer" src={bagImg.src} width={14} height={18} alt="bag" />
       </nav>
     </header>
   );
