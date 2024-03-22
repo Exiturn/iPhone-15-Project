@@ -1,8 +1,10 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Highlights from "@/components/Highlights";
+import dynamic from 'next/dynamic';
 
 const Home = () => {
+  const Navbar = dynamic(() => import('@/components/Navbar'))
+  const Hero = dynamic(() => import('@/components/Hero'))
+  const Highlights = dynamic(() => import('@/components/Highlights'))
+
   return (
     <main className="bg-black">
       <Navbar />
