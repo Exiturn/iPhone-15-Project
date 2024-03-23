@@ -21,6 +21,12 @@ import {
     "Accessories",
     "Support",
   ];
+
+  export const menuData = [
+    {
+      label: "Store"
+    }
+  ]
   
   export const hightlightsSlides = [
     {
