@@ -30,7 +30,7 @@ canvas {
   max-width: 1120px;
 }
 
-.nav:hover .navDropdown {
+.navItem:hover .navDropdown {
   @apply translate-y-[0] opacity-100
 }
 

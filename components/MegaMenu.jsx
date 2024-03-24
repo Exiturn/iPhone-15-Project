@@ -12,7 +12,7 @@ const MegaMenu = () => {
     <header className="nav md:max-w-[1180px] max-h-[44px] m-auto h-[44px] z-20 w-full md:px-6 text-[11px] transition-all">
       <nav
         style={{ ...dynamicGap }}
-        className="flex justify-between items-center h-full"
+        className="flex justify-between items-center h-full z-50"
       >
         <div className="z-20 flex justify-center items-center px-[14px] h-[44px]">
           <Logo />
@@ -20,16 +20,18 @@ const MegaMenu = () => {
 
         {navItems.map((navItem) => (
           <span
-            className="navItem hidden md:flex justify-center items-center text-nowrap py-0 px-[8px] h-[44px] cursor-pointer text-gray-200 hover:text-white transition-all duration-600 ease-in-out z-[20]"
+            className="navItem static hidden md:flex justify-center items-center text-nowrap py-0 px-[8px] h-[44px] cursor-pointer text-gray-200 hover:text-white transition-all duration-600 ease-in-out z-[20]"
             key={navItem}
           >
-            <span className="z-20">{navItem}</span>
-            <div className="w-screen hidden h-[44px] absolute left-0 z-10 mt-auto">
-              <div className="hidden w-full px-6 py-12 justify-start items-start opacity-100 transition-all translate-y-[-120%] duration-[400ms] ease-in-out absolute top-0 left-0 h-[50vh] bg-[#1d1d1f] z-[0] backdrop-blur-md">
-                <div className="my-auto pt-[40px] md:max-w-[1180px]">
-                  <ul>List 1</ul>
-                  <ul>List 2</ul>
-                  <ul>List 3</ul>
+            <span className="z-100">{navItem}</span>
+            <div className="w-screen invisible h-[44px] absolute right-0 left-0 z-[10]">
+              <div className="w-auto mt-[44px]">
+                <div className="navDropdown visible cursor-default w-full px-6 py-12 justify-start items-start opacity-100 transition-all duration-[400ms] hover:delay-300 ease-in-out absolute top-[44px] left-0 h-[50vh] bg-[#1d1d1f] backdrop-blur-md">
+                  <div className="my-auto pt-[40px] md:max-w-[1180px]">
+                    <ul>List 1</ul>
+                    <ul>List 2</ul>
+                    <ul>List 3</ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -75,13 +77,13 @@ const MegaMenu = () => {
         </div>
       </nav>
 
-      <div className="navDropdown px-6 py-10 flex justify-start items-start opacity-0 transition-all duration-[400ms] ease-in-out translate-y-[-120%] absolute top-0 left-0 w-full h-[50vh] bg-[#1d1d1f] z-[0] backdrop-blur-md">
+      {/* <div className="navDropdown px-6 py-10 flex justify-start items-start opacity-0 transition-all duration-[400ms] ease-in-out translate-y-[-120%] absolute top-0 left-0 w-full h-[50vh] bg-[#1d1d1f] z-[0] backdrop-blur-md">
         <div className="my-auto w-full">
           <ul>List 1</ul>
           <ul>List 2</ul>
           <ul>List 3</ul>
         </div>
-      </div>
+      </div> */}
     </header>
   );
 };
