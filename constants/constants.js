@@ -1,10 +1,10 @@
 import {
     blackImg,
     blueImg,
-    highlightFirstVideo,
-    highlightFourthVideo,
-    highlightSecondVideo,
-    highlightThirdVideo,
+    // highlightFirstVideo,
+    // highlightFourthVideo,
+    // highlightSecondVideo,
+    // highlightThirdVideo,
     whiteImg,
     yellowImg,
   } from "../utils";
@@ -36,13 +36,13 @@ import {
         "Game‑changing chip.",
         "Groundbreaking performance.",
       ],
-      video: highlightFirstVideo,
+      // video: highlightFirstVideo,
       videoDuration: 4,
     },
     {
       id: 2,
       textLists: ["Titanium.", "So strong. So light. So Pro."],
-      video: highlightSecondVideo,
+      // video: highlightSecondVideo,
       videoDuration: 5,
     },
     {
@@ -52,13 +52,13 @@ import {
         "longest optical zoom in",
         "iPhone ever. Far out.",
       ],
-      video: highlightThirdVideo,
+      // video: highlightThirdVideo,
       videoDuration: 2,
     },
     {
       id: 4,
       textLists: ["All-new Action button.", "What will yours do?."],
-      video: highlightFourthVideo,
+      // video: highlightFourthVideo,
       videoDuration: 3.63,
     },
   ];
