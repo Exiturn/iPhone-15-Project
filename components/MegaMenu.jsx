@@ -11,6 +11,10 @@ const MegaMenu = () => {
   const Logo = dynamic(() => import("@/components/svgComponents/Logo"));
   const dynamicGap = { gap: "calc(6px + 2.25vw)" };
 
+  const bgColor = {
+    backgroundColor: "#1d1d1f",
+  }
+
   const navMouseEnter = () => {
     const timeline = gsap.timeline();
 
@@ -76,7 +80,7 @@ const MegaMenu = () => {
   };
 
   return (
-    <header className="navContainer max-h-[44px] h-[44px] w-full  text-[11px]">
+    <header style={{ backgroundColor: `${bgColor}`}} className="navContainer max-h-[44px] h-[44px] w-full  text-[11px]">
       <nav
         style={{ ...dynamicGap }}
         className="flex justify-between items-center h-full md:max-w-[1180px] md:px-6 m-auto"
