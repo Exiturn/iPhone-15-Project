@@ -18,15 +18,17 @@ const MegaMenu = () => {
       ".navDropdown",
       {
         height: "0px",
+        opacity: "0",
         paddingTop: "0px",
         paddingBottom: "0px",
       },
       {
         height: "50vh",
+        opacity: "1",
         paddingTop: "3rem",
         paddingBottom: "3rem",
         ease: "easeInOut",
-        duration: 0.5,
+        duration: 0.4,
       }
     );
 
@@ -48,15 +50,17 @@ const MegaMenu = () => {
       ".navDropdown",
       {
         height: "50vh",
+        opacity: "1",
         paddingTop: "3rem",
         paddingBottom: "3rem",
       },
       {
         height: "0px",
+        opacity: "0",
         paddingTop: "0px",
-        paddingBottom: '0px',
+        paddingBottom: "0px",
         ease: "easeInOut",
-        duration: 0.5,
+        duration: 0.4,
       }
     );
 
@@ -72,10 +76,10 @@ const MegaMenu = () => {
   };
 
   return (
-    <header className="nav md:max-w-[1180px] max-h-[44px] m-auto h-[44px] w-full md:px-6 text-[11px]">
+    <header className="navContainer max-h-[44px] h-[44px] w-full  text-[11px]">
       <nav
         style={{ ...dynamicGap }}
-        className="flex justify-between items-center h-full"
+        className="flex justify-between items-center h-full md:max-w-[1180px] md:px-6 m-auto"
       >
         <div className=" flex justify-center items-center px-[14px] h-[44px]">
           <Logo />
@@ -141,14 +145,6 @@ const MegaMenu = () => {
           </div>
         </div>
       </nav>
-
-      {/* <div className="navDropdown px-6 py-10 flex justify-start items-start opacity-0 transition-all duration-[400ms] ease-in-out translate-y-[-120%] absolute top-0 left-0 w-full h-[50vh] bg-[#1d1d1f] z-[0] backdrop-blur-md">
-        <div className="my-auto w-full">
-          <ul>List 1</ul>
-          <ul>List 2</ul>
-          <ul>List 3</ul>
-        </div>
-      </div> */}
     </header>
   );
 };
