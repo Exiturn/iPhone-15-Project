@@ -52,7 +52,7 @@ const NavItem = ({ navItem }) => {
         paddingTop: "0px",
         paddingBottom: "0px",
         ease: "easeInOut",
-        duration: 0.4,
+        duration: 0.2,
       }
     );
 

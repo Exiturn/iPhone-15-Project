@@ -3,6 +3,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { searchImg, bagImg } from "@/utils";
 import { navItems } from "@/constants/constants";
+import { useState } from 'react';
 
 const MegaMenu = () => {
   const Equals = dynamic(() => import("@/components/svgComponents/EqualsSvg"));
