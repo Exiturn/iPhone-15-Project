@@ -43,17 +43,13 @@ export const menuData = [
           "Find a store",
           "Order Status",
           "Apple Trade In",
-          "Financing"
-        ]
+          "Financing",
+        ],
       },
       {
         heading: "Shop Special Stores",
-        subMenu: [
-          "Certified Refurbished",
-          "Education",
-          "Business"
-        ]
-      }
+        subMenu: ["Certified Refurbished", "Education", "Business"],
+      },
     ],
   },
   {
@@ -70,17 +66,12 @@ export const menuData = [
           "Mac Pro",
           "Displays",
           "Compare Mac",
-          "Mac Does That"
-        ]
+          "Mac Does That",
+        ],
       },
       {
         heading: "Shop Mac",
-        subMenu: [
-          "Shop Mac",
-          "Mac Accessories",
-          "Apple Trade In",
-          "Financing"
-        ]
+        subMenu: ["Shop Mac", "Mac Accessories", "Apple Trade In", "Financing"],
       },
       {
         heading: "More from Mac",
@@ -92,15 +83,14 @@ export const menuData = [
           "Continuity",
           "iCloud+",
           "Mac for Business",
-          "Education"
-        ]
-      }
-    ]
+          "Education",
+        ],
+      },
+    ],
   },
   {
     label: "iPad",
-    children: 
-    [
+    children: [
       {
         heading: "iPad",
         subMenu: [
@@ -112,8 +102,8 @@ export const menuData = [
           "Apple Pencil",
           "Keyboards",
           "Compare iPad",
-          "Why iPad"
-        ]
+          "Why iPad",
+        ],
       },
       {
         heading: "Shop iPad",
@@ -121,8 +111,8 @@ export const menuData = [
           "Shop iPad",
           "iPad Accessories",
           "Apple Trade In",
-          "Financing"
-        ]
+          "Financing",
+        ],
       },
       {
         heading: "More from iPad",
@@ -132,10 +122,10 @@ export const menuData = [
           "iPadOS 17",
           "Apps by Apple",
           "iCloud+",
-          "Education"
-        ]
-      }
-    ]
+          "Education",
+        ],
+      },
+    ],
   },
   {
     label: "iPhone",
@@ -150,8 +140,8 @@ export const menuData = [
           "iPhone 13",
           "iPhone SE",
           "Compare iPhone",
-          "Switch from Android"
-        ]
+          "Switch from Android",
+        ],
       },
       {
         heading: "Shop iPhone",
@@ -159,8 +149,8 @@ export const menuData = [
           "Shop iPhone",
           "iPhone Accessories",
           "Apple Trade In",
-          "Financing"
-        ]
+          "Financing",
+        ],
       },
       {
         heading: "More from iPhone",
@@ -172,10 +162,10 @@ export const menuData = [
           "iPhone Privacy",
           "iCloud+",
           "Wallet, Pay",
-          "Siri"
-        ]
-      }
-    ]
+          "Siri",
+        ],
+      },
+    ],
   },
   {
     label: "Watch",
@@ -190,8 +180,8 @@ export const menuData = [
           "Apple Watch Nike",
           "Apple Watch Hermès",
           "Compare Watch",
-          "Why Apple Watch"
-        ]
+          "Why Apple Watch",
+        ],
       },
       {
         heading: "Shop Watch",
@@ -201,8 +191,8 @@ export const menuData = [
           "Apple Watch Straps",
           "Apple Watch Accessories",
           "Apple Trade In",
-          "Financing"
-        ]
+          "Financing",
+        ],
       },
       {
         heading: "More from Apple Watch",
@@ -211,10 +201,10 @@ export const menuData = [
           "AppleCare+",
           "watchOS 10",
           "Apps by Apple",
-          "Apple Fitness+"
-        ]
-      }
-    ]
+          "Apple Fitness+",
+        ],
+      },
+    ],
   },
   {
     label: "AirPods",
@@ -227,25 +217,22 @@ export const menuData = [
           "AirPods (2nd Generation)",
           "AirPods (3rd Generation)",
           "AirPods Max",
-          "Compare AirPods"
-        ]
+          "Compare AirPods",
+        ],
       },
       {
         heading: "Shop Airpods",
-        subMenu: [
-          "Shop AirPods",
-          "AirPods Accessories"
-        ]
+        subMenu: ["Shop AirPods", "AirPods Accessories"],
       },
       {
         heading: "More from AirPods",
         subMenu: [
           "AirPods Support",
           "AppleCare+ for Headphones",
-          "Apple Music"
-        ]
-      }
-    ]
+          "Apple Music",
+        ],
+      },
+    ],
   },
   {
     label: "TV & Home",
@@ -256,8 +243,8 @@ export const menuData = [
           "Explore TV & Home",
           "Apple TV 4K",
           "HomePod",
-          "HomePod mini"
-        ]
+          "HomePod mini",
+        ],
       },
       {
         heading: "Shop TV & Home",
@@ -266,8 +253,8 @@ export const menuData = [
           "Shop HomePod",
           "Shop HomePod mini",
           "Shop Siri Remote",
-          "TV & Home Accessories"
-        ]
+          "TV & Home Accessories",
+        ],
       },
       {
         heading: "More from TV & Home",
@@ -280,10 +267,10 @@ export const menuData = [
           "Home App",
           "Apple Music",
           "Siri",
-          "AirPlay"
-        ]
-      }
-    ]
+          "AirPlay",
+        ],
+      },
+    ],
   },
   {
     label: "Entertainment",
@@ -300,17 +287,14 @@ export const menuData = [
           "Apple News+",
           "Apple Podcasts",
           "Apple Books",
-          "App Store"
-        ]
+          "App Store",
+        ],
       },
       {
         heading: "Support",
-        subMenu: [
-          "Apple TV+ Support",
-          "Apple Music Support"
-        ]
-      }
-    ]
+        subMenu: ["Apple TV+ Support", "Apple Music Support"],
+      },
+    ],
   },
   {
     label: "Accessories",
@@ -324,24 +308,20 @@ export const menuData = [
           "iPhone",
           "Apple Watch",
           "Airpods",
-          "TV & Home"
-        ]
+          "TV & Home",
+        ],
       },
       {
         heading: "Explore Accessories",
-        subMenu: [
-          "Made by Apple",
-          "Beats by Dr.Dre",
-          "AirTag"
-        ]
-      }
-    ]
+        subMenu: ["Made by Apple", "Beats by Dr.Dre", "AirTag"],
+      },
+    ],
   },
   {
     label: "Support",
     children: [
       {
-        heading:"Explore Support",
+        heading: "Explore Support",
         subMenu: [
           "iPhone",
           "Mac",
@@ -350,17 +330,12 @@ export const menuData = [
           "AirPods",
           "Music",
           "TV",
-          "Explore Support"
-        ]
+          "Explore Support",
+        ],
       },
       {
         heading: "Get Help",
-        subMenu: [
-          "Community",
-          "Check Coverage",
-          "Repair",
-          "Contact Us"
-        ]
+        subMenu: ["Community", "Check Coverage", "Repair", "Contact Us"],
       },
       {
         heading: "Helpful Topics",
@@ -369,11 +344,11 @@ export const menuData = [
           "Apple ID & Password",
           "Billing & Subscriptions",
           "Find My",
-          "Accessibility"
-        ]
-      }
-    ]
-  }
+          "Accessibility",
+        ],
+      },
+    ],
+  },
 ];
 
 export const hightlightsSlides = [
