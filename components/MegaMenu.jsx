@@ -2,8 +2,8 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { searchImg, bagImg } from "@/utils";
-import { navItems } from "@/constants/constants";
-import { useState } from 'react';
+import { menuData } from "@/constants/constants";
+import { useState, useEffect } from 'react';
 
 const MegaMenu = () => {
   const Equals = dynamic(() => import("@/components/svgComponents/EqualsSvg"));
@@ -14,6 +14,10 @@ const MegaMenu = () => {
   const bgColor = {
     backgroundColor: "#1d1d1f",
   };
+
+  useEffect(() => {
+    console.log(menuData)
+  }, [])
 
   return (
     <header
@@ -28,8 +32,10 @@ const MegaMenu = () => {
           <Logo />
         </div>
 
-        {navItems.map((navItem) => (
-          <NavItem navItem={navItem} />
+        {menuData.map((menuItem) => (
+          <div key={menuItem.label}>
+            <NavItem menuItem={menuItem} />
+          </div>
         ))}
 
         <Image
