@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 const MegaMenu = () => {
   const Equals = dynamic(() => import("@/components/svgComponents/EqualsSvg"));
   const Logo = dynamic(() => import("@/components/svgComponents/Logo"));
-  const NavItem = dynamic(() => import("@/components/navItem"));
+  const NavItem = dynamic(() => import("@/components/NavItem"));
   const dynamicGap = { gap: "calc(6px + 2.25vw)" };
 
   // const [bgColor, setBgColor] = useState({ backgroundColor: "#1d1d1f"});
