@@ -11,13 +11,15 @@ const MegaMenu = () => {
   const NavItem = dynamic(() => import("@/components/navItem"));
   const dynamicGap = { gap: "calc(6px + 2.25vw)" };
 
+  // const [bgColor, setBgColor] = useState({ backgroundColor: "#1d1d1f"});
+
   const bgColor = {
     backgroundColor: "#1d1d1f",
   };
 
-  useEffect(() => {
-    console.log(menuData)
-  }, [])
+  // useEffect(() => {
+  //   console.log(menuData)
+  // }, [])
 
   return (
     <header
