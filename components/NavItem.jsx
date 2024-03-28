@@ -1,19 +1,15 @@
-"use client"
+"use client";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
 
 const NavItem = ({ menuItem }) => {
-
   const label = menuItem ? menuItem.label : null;
   const children = menuItem.children ? menuItem.children : null;
 
-  const [hoveredItem, setHoveredItem] = useState()
+  const [hoveredItem, setHoveredItem] = useState();
 
-  useEffect(() => {
-    console.log(children);
-  }, []);
-
-  const navMouseEnter = () => {
+  const navMouseEnter = (event) => {
+    event.stopPropagation();
     const timeline = gsap.timeline();
 
     timeline.fromTo(
@@ -45,7 +41,8 @@ const NavItem = ({ menuItem }) => {
     );
   };
 
-  const navMouseLeave = () => {
+  const navMouseLeave = (event) => {
+    event.stopPropagation();
     const timeline = gsap.timeline();
 
     timeline.fromTo(
@@ -86,14 +83,22 @@ const NavItem = ({ menuItem }) => {
       <span>{label}</span>
       <div className="w-screen invisible h-[44px] absolute right-0 left-0">
         <div className="w-auto mt-[44px]">
-          <div className="navDropdown overflow-hidden visible cursor-default w-full px-6 justify-start items-start opacity-100 hover:delay-300 absolute left-0 bg-[#1d1d1f] backdrop-blur-md">
-            <div className="navContent flex gap-x-10 items-center overflow-hidden md:max-w-[1180px] h-[50vh]">
+          <div
+            onMouseEnter={(e) => e.stopPropagation()}
+            className="navDropdown overflow-hidden visible cursor-default w-full mx-auto px-6 justify-start items-start opacity-100 hover:delay-300 absolute left-0 bg-[#1d1d1f] backdrop-blur-md"
+          >
+            <div className="navContent flex gap-x-10 items-start overflow-hidden md:max-w-[1180px] h-0">
               {children.map((child) => (
-                <div key={child.heading} className="overflow-hidden my-auto mx-auto py-10 px-10 md:max-w-[1180px]">
+                <div
+                  key={child.heading}
+                  className="overflow-hidden mx-auto px-10 md:max-w-[1180px]"
+                >
                   <h3 className="text-[#86868b] mb-4">{child.heading}</h3>
-                  {child.subMenu.map((item) => (
-                    <div>
-                      <span className="text-[24px] text-white font-semibold">{item}</span>
+                  {child.subMenu.map((item, index) => (
+                    <div key={index}>
+                      <span className="text-[24px] text-white font-semibold">
+                        {item}
+                      </span>
                     </div>
                   ))}
                 </div>
