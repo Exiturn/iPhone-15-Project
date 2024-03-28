@@ -41,71 +41,12 @@ const NavItem = ({ menuItem }) => {
           height: "100%",
         }
       );
-    } else {
-      const timeline = gsap.timeline();
-
-      timeline.fromTo(
-        `#${hoveredItem}`,
-        {
-          height: "50vh",
-          opacity: "1",
-          paddingTop: "3rem",
-          paddingBottom: "3rem",
-        },
-        {
-          height: "0px",
-          opacity: "0",
-          paddingTop: "0px",
-          paddingBottom: "0px",
-          ease: "easeInOut",
-          duration: 0.2,
-        }
-      );
-
-      timeline.fromTo(
-        ".navContent",
-        {
-          height: "100%",
-        },
-        {
-          height: "0px",
-        }
-      );
-    }
+    }; 
   }, [hoveredItem]);
 
   const navMouseEnter = (label, event) => {
     event.stopPropagation();
     setHoveredItem(label.replace());
-    // const timeline = gsap.timeline();
-
-    // timeline.fromTo(
-    //   "#Store",
-    //   {
-    //     height: "0px",
-    //     opacity: "0",
-    //     paddingTop: "0px",
-    //     paddingBottom: "0px",
-    //   },
-    //   {
-    //     height: "50vh",
-    //     opacity: "1",
-    //     paddingTop: "3rem",
-    //     paddingBottom: "3rem",
-    //     ease: "easeInOut",
-    //     duration: 0.4,
-    //   }
-    // );
-
-    // timeline.fromTo(
-    //   ".navContent",
-    //   {
-    //     height: "0px",
-    //   },
-    //   {
-    //     height: "100%",
-    //   }
-    // );
   };
 
   const navMouseLeave = (label, event) => {
