@@ -9,7 +9,7 @@ const MegaMenu = () => {
   const Equals = dynamic(() => import("@/components/svgComponents/EqualsSvg"));
   const Logo = dynamic(() => import("@/components/svgComponents/Logo"));
   const NavItem = dynamic(() => import("@/components/NavItem"));
-  const dynamicGap = { gap: "calc(6px + 2.25vw)" };
+  const dynamicGap = { gap: "calc(6px + 1.25vw)" };
 
   // const [bgColor, setBgColor] = useState({ backgroundColor: "#1d1d1f"});
 
@@ -24,11 +24,11 @@ const MegaMenu = () => {
   return (
     <header
       style={{ ...bgColor }}
-      className="navContainer max-h-[44px] h-[44px] w-full  text-[11px]"
+      className="navContainer max-h-[44px] h-[44px] w-full text-[11px]"
     >
       <nav
         style={{ ...dynamicGap }}
-        className="flex justify-between items-center h-full md:max-w-[1180px] md:px-6 m-auto"
+        className="flex justify-between items-center h-full max-w-[1180px] md:px-6 m-auto"
       >
         <div className=" flex justify-center items-center px-[14px] h-[44px]">
           <Logo />
@@ -73,7 +73,7 @@ const MegaMenu = () => {
               alt="bag"
             />
           </div>
-          <div className="px-[10px] z-20">
+          <div className=" pl-[10px] pr-[25px] md:px-[10px] z-20">
             <Equals />
           </div>
         </div>

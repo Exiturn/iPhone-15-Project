@@ -100,12 +100,12 @@ const NavItem = ({ menuItem }) => {
           >
             <div
               id={`${label.replace(/&/g, 'and').replace(/\s/g, '')}Content`}
-              className="navContent flex gap-x-10 px-12 items-start overflow-hidden md:max-w-[1180px]"
+              className="navContent flex gap-x-2 m-auto items-start overflow-hidden max-w-[1180px]"
             >
               {children.map((child) => (
                 <div
                   key={child.heading}
-                  className="overflow-hidden px-12 md:max-w-[1180px]"
+                  className="overflow-hidden px-10 md:max-w-[1180px]"
                 >
                   <h3 className="text-[#86868b] mb-4">{child.heading}</h3>
                   {child.subMenu.map((item, index) => (
