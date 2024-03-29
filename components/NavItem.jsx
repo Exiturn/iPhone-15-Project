@@ -96,7 +96,7 @@ const NavItem = ({ menuItem }) => {
           <div
             id={label.replace(/&/g, 'and').replace(/\s/g, '')}
             onMouseEnter={(e) => e.stopPropagation()}
-            className="navDropdown h-0 overflow-hidden visible cursor-default w-full mx-auto px-6 justify-start items-start opacity-100 hover:delay-300 absolute left-0 bg-[#1d1d1f] backdrop-filter backdrop-blur-md"
+            className="navDropdown z-[1] h-0 overflow-hidden visible cursor-default w-full mx-auto px-6 justify-start items-start opacity-100 hover:delay-300 absolute left-0 bg-[#1d1d1f] backdrop-filter backdrop-blur-md"
           >
             <div
               id={`${label.replace(/&/g, 'and').replace(/\s/g, '')}Content`}
@@ -107,10 +107,10 @@ const NavItem = ({ menuItem }) => {
                   key={child.heading}
                   className="overflow-hidden px-10 md:max-w-[1180px]"
                 >
-                  <h3 className="text-[#86868b] mb-4">{child.heading}</h3>
+                  <h3 className="text-[#86868b] mb-4 hover:cursor-pointer">{child.heading}</h3>
                   {child.subMenu.map((item, index) => (
                     <div key={index}>
-                      <span className="text-[24px] text-white font-semibold">
+                      <span className="text-[24px] text-white font-semibold cursor-pointer">
                         {item}
                       </span>
                     </div>
