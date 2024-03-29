@@ -1,5 +1,6 @@
 "use client";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { useEffect, useState } from "react";
 
 const NavItem = ({ menuItem }) => {
@@ -8,7 +9,7 @@ const NavItem = ({ menuItem }) => {
 
   const [hoveredItem, setHoveredItem] = useState();
 
-  useEffect(() => {
+  useGSAP(() => {
     console.log(hoveredItem);
 
     if (hoveredItem !== null) {
@@ -23,7 +24,7 @@ const NavItem = ({ menuItem }) => {
           paddingBottom: "0px",
         },
         {
-          height: "50vh",
+          height: "60vh",
           opacity: "1",
           paddingTop: "3rem",
           paddingBottom: "3rem",
@@ -33,7 +34,7 @@ const NavItem = ({ menuItem }) => {
       );
 
       timeline.fromTo(
-        ".navContent",
+        `#${hoveredItem}Content`,
         {
           height: "0px",
         },
@@ -55,9 +56,9 @@ const NavItem = ({ menuItem }) => {
     const timeline = gsap.timeline();
 
     timeline.fromTo(
-      ".navDropdown",
+      `#${hoveredItem}`,
       {
-        height: "50vh",
+        height: "60vh",
         opacity: "1",
         paddingTop: "3rem",
         paddingBottom: "3rem",
@@ -73,7 +74,7 @@ const NavItem = ({ menuItem }) => {
     );
 
     timeline.fromTo(
-      ".navContent",
+      `#${hoveredItem}Content`,
       {
         height: "100%",
       },
@@ -95,16 +96,16 @@ const NavItem = ({ menuItem }) => {
           <div
             id={label.replace(/&/g, 'and').replace(/\s/g, '')}
             onMouseEnter={(e) => e.stopPropagation()}
-            className="navDropdown h-0 overflow-hidden visible cursor-default w-full mx-auto px-6 justify-start items-start opacity-100 hover:delay-300 absolute left-0 bg-[#1d1d1f] backdrop-blur-md"
+            className="navDropdown h-0 overflow-hidden visible cursor-default w-full mx-auto px-6 justify-start items-start opacity-100 hover:delay-300 absolute left-0 bg-[#1d1d1f] backdrop-filter backdrop-blur-md"
           >
             <div
               id={`${label.replace(/&/g, 'and').replace(/\s/g, '')}Content`}
-              className="navContent flex gap-x-10 items-start overflow-hidden md:max-w-[1180px]"
+              className="navContent flex gap-x-10 px-12 items-start overflow-hidden md:max-w-[1180px]"
             >
               {children.map((child) => (
                 <div
                   key={child.heading}
-                  className="overflow-hidden mx-auto px-10 md:max-w-[1180px]"
+                  className="overflow-hidden px-12 md:max-w-[1180px]"
                 >
                   <h3 className="text-[#86868b] mb-4">{child.heading}</h3>
                   {child.subMenu.map((item, index) => (
@@ -117,6 +118,7 @@ const NavItem = ({ menuItem }) => {
                 </div>
               ))}
             </div>
+            <div className="fixed w-full h-auto z-0 backdrop-filter backdrop-blur-lg"></div>
           </div>
         </div>
       </div>

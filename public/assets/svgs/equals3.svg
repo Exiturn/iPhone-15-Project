@@ -1,0 +1,6 @@
+<svg width="64" height="50" viewBox="0 0 64 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="square">
+<path id="bottomline" d="M55 35L9 35" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<path id="topline" d="M55 13L9 13" stroke="black" stroke-width="5" stroke-linecap="round"/>
+</g>
+</svg>
