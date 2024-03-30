@@ -22,7 +22,7 @@ const Hero = () => {
 
   useGSAP(() => {
     window.addEventListener('resize', handleVideoSrc)
-    gsap.to(".hero-title", { opacity: 1, delay: 0.75 });
+    gsap.to(".hero-title", { opacity: 1, delay: 1 });
 
     return () => {
       window.removeEventListener('resize', handleVideoSrc)

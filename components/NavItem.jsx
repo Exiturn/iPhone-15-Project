@@ -107,9 +107,9 @@ const NavItem = ({ menuItem }) => {
                   key={child.heading}
                   className="overflow-hidden px-10 md:max-w-[1180px]"
                 >
-                  <h3 className="text-[#86868b] mb-4 hover:cursor-pointer">{child.heading}</h3>
+                  <h3 className="text-[#86868b] mb-4">{child.heading}</h3>
                   {child.subMenu.map((item, index) => (
-                    <div key={index}>
+                    <div key={index} >
                       <span className="text-[24px] text-white font-semibold cursor-pointer">
                         {item}
                       </span>
