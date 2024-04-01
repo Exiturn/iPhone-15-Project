@@ -1,10 +1,6 @@
 import {
   blackImg,
   blueImg,
-  // highlightFirstVideo,
-  // highlightFourthVideo,
-  // highlightSecondVideo,
-  // highlightThirdVideo,
   whiteImg,
   yellowImg,
 } from "../utils";

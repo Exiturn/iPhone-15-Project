@@ -4,7 +4,7 @@ const SvgComponent = (props) => (
     xmlns="http://www.w3.org/2000/svg"
     width="14px"
     height="18px"
-    className="xl:hidden fill-gray-200 transition duration-300 ease-in-out hover:fill-white cursor-pointer"
+    className="fill-gray-200 transition duration-300 ease-in-out hover:fill-white cursor-pointer"
     {...props}
   >
     <g clipPath="url(#a)">
