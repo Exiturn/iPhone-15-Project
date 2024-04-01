@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 const Home = () => {
   const Navbar = dynamic(() => import('@/components/Navbar'))
   const Hero = dynamic(() => import('@/components/Hero'), {ssr: false})
-  const Highlights = dynamic(() => import('@/components/Highlights'))
+  const Highlights = dynamic(() => import('@/components/Highlights', {ssr: false}))
 
   return (
     <main className="bg-black">
