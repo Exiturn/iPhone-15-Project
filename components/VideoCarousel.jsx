@@ -6,6 +6,8 @@ const VideoCarousel = () => {
   const videoSpanRef = useRef([]);
   const videoDivRef = useRef([]);
 
+  const spanArray = [{}, {}, {}, {}];
+
   const [video, setVideo] = useState({
     isEnd: false,
     startPlay: false,
@@ -18,10 +20,11 @@ const VideoCarousel = () => {
   const [loadedData, setLoadedData] = useState([]);
 
   useEffect(() => {
-    console.log("videoRef: ", videoRef);
-    console.log("videoDivRef: ", videoDivRef);
-    console.log("videoSpanRef: ", videoSpanRef);
-  }, [videoRef]);
+    console.log("videoRef: ", videoRef.current.length);
+    console.log("videoDivRef: ", videoDivRef.current);
+    console.log("videoSpanRef: ", videoSpanRef.current);
+    console.log(spanArray)
+  }, []);
 
   useEffect(() => {
     if (loadedData.length > 3) {
@@ -33,16 +36,16 @@ const VideoCarousel = () => {
     }
   }, [startPlay, videoId, isPlaying, loadedData]);
 
-  useEffect(() => {
-    const currentProgress = 0;
+  //   useEffect(() => {
+  //     const currentProgress = 0;
 
-    // if (span[videoId]) {
-    //   let anim = gsap.to(span[videoId], {
-    //     onUpdate: () => {},
-    //     onComplete: () => {},
-    //   });
-    // }
-  }, [videoId, startPlay]);
+  //     if (span[videoId]) {
+  //       let anim = gsap.to(span[videoId], {
+  //         onUpdate: () => {},
+  //         onComplete: () => {},
+  //       });
+  //     }
+  //   }, [videoId, startPlay]);
 
   return (
     <>
@@ -86,7 +89,7 @@ const VideoCarousel = () => {
 
       <div className="relative flex-center mt-10 pb-20">
         <div className="flex-center py-5 px-7 bg-gray-300 backdrop-blur rounded-full">
-          {videoRef.current.map((_, i) => (
+          {spanArray.map((_, i) => (
             <span
               key={i}
               ref={(el) => (videoDivRef.current[i] = el)}

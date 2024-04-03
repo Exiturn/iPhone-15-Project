@@ -2,9 +2,10 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import dynamic from "next/dynamic";
+import VideoCarousel from "./VideoCarousel";
 
 const Highlights = () => {
-  const VideoCarousel = dynamic(() => import("@/components/VideoCarousel"));
+  // const VideoCarousel = dynamic(() => import("@/components/VideoCarousel"));
   useGSAP(() => {
     gsap.to("#title", { opacity: 1, y: 0 });
     gsap.to(".link", { opacity: 1, y: 0, duration: 1, stagger: 0.25 });
