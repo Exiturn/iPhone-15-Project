@@ -23,9 +23,10 @@ const VideoCarousel = () => {
 
   const { isEnd, startPlay, videoId, isLastVideo, isPlaying } = video;
   const [loadedData, setLoadedData] = useState([]);
+  const loadedDataRef = useRef(loadedData);
 
   // useEffect(() => {
-  //   console.log("loaded data", loadedData);
+  //   loadedDataRef.current = loadedData;
   // }, [loadedData]);
 
   useGSAP(() => {
@@ -50,7 +51,7 @@ const VideoCarousel = () => {
         startPlay && videoRef.current[videoId].play();
       }
     }
-  }, [startPlay, videoId, isPlaying, loadedData]);
+  }, [startPlay, videoId, isPlaying]);
 
   useEffect(() => {
     const currentProgress = 0;
@@ -63,7 +64,7 @@ const VideoCarousel = () => {
       // }
   }, [videoId, startPlay]);
 
-  const handleLoadedMetadata = (i, e) => setLoadedData((pre) => [...pre, e]);
+  const handleLoadedMetadata = (i, e) => setLoadedData(pre => [...pre, e]);
 
   const handleProcess = (type, i) => {
     switch (type) {
@@ -107,7 +108,7 @@ const VideoCarousel = () => {
                       isPlaying: true,
                     }));
                   }}
-                  onLoadedMetadata={e => handleLoadedMetadata(index, e)}
+                  onLoadedMetadata={(e) => handleLoadedMetadata(index, e)}
                 >
                   <source src={list.videoSrc} type="video/mp4" />
                 </video>
