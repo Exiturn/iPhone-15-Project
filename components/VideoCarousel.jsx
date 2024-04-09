@@ -25,13 +25,9 @@ const VideoCarousel = () => {
   const [loadedData, setLoadedData] = useState([]);
   const loadedDataRef = useRef(loadedData);
 
-  // useEffect(() => {
-  //   loadedDataRef.current = loadedData;
-  // }, [loadedData]);
-
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     gsap.to("#video", {
       scrollTrigger: {
         trigger: "#video",
@@ -54,34 +50,55 @@ const VideoCarousel = () => {
   }, [startPlay, videoId, isPlaying]);
 
   useEffect(() => {
-    const currentProgress = 0;
+    let currentProgress = 0;
+    let span = videoSpanRef.current;
 
-      // if (span[videoId]) {
-      //   let anim = gsap.to(span[videoId], {
-      //     onUpdate: () => {},
-      //     onComplete: () => {},
-      //   });
-      // }
+    if (span[videoId]) {
+      let anim = gsap.to(span[videoId], {
+        onUpdate: () => {
+          const progress = Math.ceil(anim.progress() * 100);
+
+          if (progress != currentProgress) {
+            currentProgress = progress;
+
+            gsap.to(videoDivRef.current[videoId], {
+              width:
+                window.innerWidth < 760
+                  ? "10vw"
+                  : window.innerWidth < 1200
+                  ? "10vw"
+                  : "4vw",
+            });
+
+            gsap.to(span[videoId], {
+              width: `${currentProgress}%`,
+              backgroundColor: 'white'
+            })
+          }
+        },
+        onComplete: () => {},
+      });
+    }
   }, [videoId, startPlay]);
 
-  const handleLoadedMetadata = (i, e) => setLoadedData(pre => [...pre, e]);
+  const handleLoadedMetadata = (i, e) => setLoadedData((pre) => [...pre, e]);
 
   const handleProcess = (type, i) => {
     switch (type) {
       case "video-end":
-        console.log("video-end")
+        console.log("video-end");
         setVideo((pre) => ({ ...pre, isEnd: true, videoId: i + 1 }));
         break;
       case "video-last":
-        console.log("video-last")
+        console.log("video-last");
         setVideo((pre) => ({ ...pre, isLastVideo: true }));
         break;
       case "video-reset":
-        console.log("video-reset")
+        console.log("video-reset");
         setVideo((pre) => ({ ...pre, isLastVideo: false, videoId: 0 }));
         break;
       case "play":
-        console.log("play")
+        console.log("play");
         setVideo((pre) => ({ ...pre, isPlaying: !pre.isPlaying }));
       default:
         return video;
@@ -96,6 +113,7 @@ const VideoCarousel = () => {
             <div className="video-carousel_container">
               <div className="w-full h-full flex-center sm:rounded-3xl overflow-hidden bg-black">
                 <video
+                  className="w-full h-full"
                   id="video"
                   muted
                   loop
