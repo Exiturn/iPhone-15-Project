@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, Fragment } from "react";
 import { hightlightsSlides } from "@/constants/constants";
 import { playImg, pauseImg, replayImg } from "@/utils";
 import gsap from "gsap";
@@ -28,12 +28,12 @@ const VideoCarousel = () => {
   useGSAP(() => {
     gsap.config({ nullTargetWarn: false, trialWarn: false });
     gsap.registerPlugin(ScrollTrigger);
-    
-    gsap.to('#slider', {
+
+    gsap.to("#slider", {
       transform: `translateX(${-100 * videoId}%)`,
       duration: 2,
-      ease: 'power2.inOut'
-    })
+      ease: "power2.inOut",
+    });
 
     gsap.to("#video", {
       scrollTrigger: {
@@ -46,6 +46,7 @@ const VideoCarousel = () => {
     });
   }, [isEnd, videoId]);
 
+  /* Handles auto-play on video metadata load */
   useEffect(() => {
     if (loadedData.length > 3) {
       if (!isPlaying) {
@@ -56,6 +57,7 @@ const VideoCarousel = () => {
     }
   }, [startPlay, videoId, isPlaying]);
 
+  /* Carousel span animation */
   useEffect(() => {
     let currentProgress = 0;
     let span = videoSpanRef.current;
@@ -63,12 +65,20 @@ const VideoCarousel = () => {
 
     if (span[videoId]) {
       let anim = gsap.to(span[videoId], {
+        /* 
+        
+          progress = progress of animation * 100 // Percentage of animation complete
+
+          The animUpdate function updates the progress of the GSAP animation based on the current time of the video relative to its total duration.
+          It adjusts the animation's progress according to the video's progress.
+
+          animUpdate is then added to the gsap ticker based on whether the current video is playing
+
+        */
         onUpdate: () => {
           const progress = Math.ceil(anim.progress() * 100);
 
           if (progress != currentProgress) {
-            currentProgress = progress;
-
             gsap.to(div[videoId], {
               width:
                 window.innerWidth < 760
@@ -79,7 +89,7 @@ const VideoCarousel = () => {
             });
 
             gsap.to(span[videoId], {
-              width: `${currentProgress}%`,
+              width: `${progress}%`,
               backgroundColor: "white",
             });
           }
@@ -87,7 +97,7 @@ const VideoCarousel = () => {
         onComplete: () => {
           if (isPlaying) {
             gsap.to(div[videoId], {
-              width: "12px",
+              width: "8px",
             });
             gsap.to(span[videoId], {
               backgroundColor: "#afafaf",
@@ -102,7 +112,8 @@ const VideoCarousel = () => {
 
       const animUpdate = () => {
         anim.progress(
-          videoRef.current[videoId].currentTime / hightlightsSlides[videoId].videoDuration
+          videoRef.current[videoId].currentTime /
+            hightlightsSlides[videoId].videoDuration
         );
       };
 
@@ -144,24 +155,22 @@ const VideoCarousel = () => {
   };
 
   return (
-    <>
+    <Fragment>
       <div className="flex items-center sm:px-10">
-        {/* Map over highlightsSlides array to create "slider" divs for each video */}
         {hightlightsSlides.map((list, index) => (
           <div key={list.id} id="slider" className="sm:pr-20">
             <div className="video-carousel_container">
               <div className="w-full h-full flex-center sm:rounded-3xl overflow-hidden bg-black">
                 <video
-                  className="w-full h-full"
                   id="video"
                   muted
                   preload="auto"
                   playsInline={true}
                   ref={(el) => (videoRef.current[index] = el)}
-                  onEnded={() => 
-                    index !== 3 
-                      ? handleProcess('video-end', index)
-                      : handleProcess('video-last')
+                  onEnded={() =>
+                    index !== 3
+                      ? handleProcess("video-end", index)
+                      : handleProcess("video-last")
                   }
                   onPlay={() => {
                     setVideo((prevVideo) => ({
@@ -190,13 +199,13 @@ const VideoCarousel = () => {
         ))}
       </div>
 
-      <div className="relative flex-center mt-10 pb-20">
+      <div className="flex-center mt-10 pb-20 sticky">
         <div className="flex-center py-5 px-7 bg-gray-300 backdrop-blur rounded-full">
           {spanArray.map((_, i) => (
             <span
               key={i}
               ref={(el) => (videoDivRef.current[i] = el)}
-              className="mx-2 w-3 h-3 bg-gray-200 rounded-full relative cursor-pointer"
+              className="mx-2 w-2 h-2 bg-gray-200 rounded-full relative cursor-pointer"
             >
               <span
                 className="absolute h-full w-full rounded-full"
@@ -226,7 +235,7 @@ const VideoCarousel = () => {
           />
         </button>
       </div>
-    </>
+    </Fragment>
   );
 };
 
