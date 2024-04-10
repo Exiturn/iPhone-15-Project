@@ -362,7 +362,7 @@ export const hightlightsSlides = [
     id: 2,
     textLists: ["Titanium.", "So strong. So light. So Pro."],
     videoSrc: '/assets/videos/highlight-sec.mp4',
-    videoDuration: 5,
+    videoDuration: 2,
   },
   {
     id: 3,
@@ -372,7 +372,7 @@ export const hightlightsSlides = [
       "iPhone ever. Far out.",
     ],
     videoSrc: '/assets/videos/highlight-third.mp4',
-    videoDuration: 2,
+    videoDuration: 5,
   },
   {
     id: 4,

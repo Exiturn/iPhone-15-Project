@@ -133,6 +133,11 @@ const VideoCarousel = () => {
       case "play":
         console.log("play");
         setVideo((pre) => ({ ...pre, isPlaying: !pre.isPlaying }));
+        break;
+      case "pause":
+        console.log("pause");
+        setVideo((pre) => ({ ...pre, isPlaying: !pre.isPlaying }));
+        break;
       default:
         return video;
     }
@@ -141,6 +146,7 @@ const VideoCarousel = () => {
   return (
     <>
       <div className="flex items-center sm:px-10">
+        {/* Map over highlightsSlides array to create "slider" divs for each video */}
         {hightlightsSlides.map((list, index) => (
           <div key={list.id} id="slider" className="sm:pr-20">
             <div className="video-carousel_container">
