@@ -38,7 +38,7 @@ const Model = () => {
 
   return (
     <section className="py-20 w-full h-full overflow-hidden">
-      <div className="sm:px-10 px-5">
+      <div className="sm:px-10 px-5 relative">
         <h1 id="heading" className="section-heading tracking-tighter">
           Take a closer look.
         </h1>
@@ -65,7 +65,7 @@ const Model = () => {
             />
 
             <Canvas
-              className="w-full h-full"
+              className="w-full h-full pointer-events-auto"
               style={{
                 position: "fixed",
                 top: 0,
@@ -73,6 +73,7 @@ const Model = () => {
                 left: 0,
                 right: 0,
                 overflow: "hidden",
+                pointerEvents: 'none'
               }}
               eventSource={document.getElementById("root")}
             >
