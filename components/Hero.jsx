@@ -18,14 +18,17 @@ const Hero = () => {
     }
   };
 
-  useGSAP(() => {
+  useEffect(() => {
     window.addEventListener('resize', handleVideoSrc)
-    gsap.to(".hero-title", { opacity: 1, delay: 1 });
-    gsap.to('#cta', { opacity: 1, y: -50, delay: 1 });
 
     return () => {
       window.removeEventListener('resize', handleVideoSrc)
     }
+  })
+
+  useGSAP(() => {
+    gsap.to(".hero-title", { opacity: 1, delay: 1 });
+    gsap.to('#cta', { opacity: 1, y: -50, delay: 1 });
   }, []);
 
   return (
