@@ -24,6 +24,16 @@ const Features = () => {
         { scrub: 5.5 }
       );
       animateWithGsapTrigger(".g_text", { y: 0, opacity: 1 });
+      gsap.to('#exploreVideo', {
+        scrollTrigger: {
+          trigger: '#exploreVideo',
+          toggleActions: "play pause reverse restart",
+          start: "-10% bottom",
+        },
+        onComplete: () => {
+          videoRef.current.play();
+        }
+      });
     };
 
     const delay = setTimeout(() => {
