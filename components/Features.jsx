@@ -23,6 +23,7 @@ const Features = () => {
         },
         { scrub: 5.5 }
       );
+      animateWithGsapTrigger(".g_text", { y: 0, opacity: 1 });
     };
 
     const delay = setTimeout(() => {
@@ -35,7 +36,7 @@ const Features = () => {
   }, []);
 
   return (
-    <section className="bg-zinc w-screen h-full py-20 sm:px-10 px-5 overflow-hidden">
+    <section className="bg-zinc w-screen h-full py-24 sm:px-10 px-5 overflow-hidden">
       <div className="relative ms-auto me-auto">
         <div className="mb-12">
           <h1 id="features-title" className="section-heading tracking-tighter">
@@ -80,6 +81,29 @@ const Features = () => {
                     alt="titanium"
                     className="feature-video g_grow"
                   />
+                </div>
+              </div>
+
+              <div className="feature-text-container">
+                <div className="flex-1 flex-center">
+                  <p className="feature-text g_text">
+                    iPhone 15 Pro is{" "}
+                    <span className="text-white">
+                      the first iPhone to feature an aerospace‑grade titanium
+                      design
+                    </span>
+                    , using the same alloy that spacecraft use for missions to
+                    Mars.
+                  </p>
+                </div>
+
+                <div className="flex-1 flex-center">
+                  <p className="feature-text g_text">
+                    Titanium has one of the best strength‑to‑weight ratios of
+                    any metal, making these our{" "}
+                    <span className="text-white">lightest Pro models ever</span>
+                    . You’ll notice the difference the moment you pick one up.
+                  </p>
                 </div>
               </div>
             </div>

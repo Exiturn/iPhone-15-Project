@@ -73,7 +73,7 @@ canvas {
   }
 
   .feature-text-container {
-    @apply w-full flex-center flex-col md:flex-row mt-10 md:mt-16 gap-5
+    @apply w-full flex justify-start items-start flex-col md:flex-row mt-10 md:mt-16 gap-5
   }
 
   .feature-video {
