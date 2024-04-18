@@ -4,10 +4,6 @@ export const heroImg = hero;
 
 // import hmv from "/public/assets/videos/hero.mp4";
 // import smallmv from "/public/assets/videos/smallHero.mp4";
-// import highlightFirstmv from "/public/assets/videos/highlight-first.mp4";
-// import highlightSectmv from "/public/assets/videos/hightlight-third.mp4";
-// import highlightThirdmv from "/public/assets/videos/hightlight-sec.mp4";
-// import highlightFourthmv from "/public/assets/videos/hightlight-fourth.mp4";
 // import exploremv from "/public/assets/videos/explore.mp4";
 // import framemv from "/public/assets/videos/frame.mp4";
 
@@ -30,14 +26,10 @@ import explore2 from "/public/assets/images/explore2.jpg";
 import chip from "/public/assets/images/chip.jpeg";
 import frame from "/public/assets/images/frame.png";
 
-// export const heroVideo = hmv;
-// export const smallHeroVideo = smallmv;
-// export const highlightFirstVideo = highlightFirstmv;
-// export const highlightSecondVideo = highlightSectmv;
-// export const highlightThirdVideo = highlightThirdmv;
-// export const highlightFourthVideo = highlightFourthmv;
-// export const exploreVideo = exploremv;
-// export const frameVideo = framemv;
+// export const heroVideo = hmv.src;
+// export const smallHeroVideo = smallmv.src;
+// export const exploreVideo = exploremv.src;
+// export const frameVideo = framemv.src;
 
 export const appleGreyImg = appleGrey;
 export const appleImg = apple;
