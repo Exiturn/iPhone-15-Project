@@ -78,14 +78,14 @@ const Features = () => {
 
             <div className="flex flex-col w-full relative mt-4">
               <div className="feature-video-container">
-                <div className="overflow-hidden flex-1 h-[50vh]">
+                <div className="overflow-hidden w-[50%] h-[50vh]">
                   <img
                     src={explore1Img.src}
                     alt="titanium"
                     className="feature-video g_grow"
                   />
                 </div>
-                <div className="overflow-hidden flex-1 h-[50vh]">
+                <div className="overflow-hidden w-[50%] h-[50vh]">
                   <img
                     src={explore2Img.src}
                     alt="titanium"

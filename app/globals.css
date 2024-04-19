@@ -69,11 +69,11 @@ canvas {
   }
 
   .feature-text {
-    @apply text-gray max-w-md text-lg md:text-xl font-semibold opacity-0 translate-y-[100px]
+    @apply text-gray w-[75%] text-lg md:text-xl font-semibold opacity-0 translate-y-[100px]
   }
 
   .feature-text-container {
-    @apply w-full flex justify-start items-start flex-col md:flex-row mt-10 md:mt-16 gap-5
+    @apply w-full flex justify-start items-start flex-col md:flex-row mt-10 md:mt-12 gap-5
   }
 
   .feature-video {

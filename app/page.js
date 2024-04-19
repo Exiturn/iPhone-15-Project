@@ -6,6 +6,7 @@ const Home = () => {
   const Highlights = dynamic(() => import('@/components/Highlights', {ssr: false}))
   const Model = dynamic(() => import('@/components/Model'), {ssr: false})
   const Features = dynamic(() => import('@/components/Features'))
+  const Gaming = dynamic(() => import('@/components/Gaming'))
 
   return (
     <main className="bg-black">
@@ -14,6 +15,7 @@ const Home = () => {
       <Highlights />
       <Model />
       <Features />
+      <Gaming />
     </main>
   );
 }
