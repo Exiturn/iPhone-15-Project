@@ -25,6 +25,7 @@ import explore1 from "/public/assets/images/explore1.jpg";
 import explore2 from "/public/assets/images/explore2.jpg";
 import chip from "/public/assets/images/chip.jpeg";
 import frame from "/public/assets/images/frame.png";
+import iguana from "/public/assets/images/iguana.webp";
 
 // export const heroVideo = hmv.src;
 // export const smallHeroVideo = smallmv.src;
@@ -49,3 +50,4 @@ export const explore1Img = explore1;
 export const explore2Img = explore2;
 export const chipImg = chip;
 export const frameImg = frame;
+export const iguanaImg = iguana;
