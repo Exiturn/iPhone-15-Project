@@ -3,6 +3,7 @@ import { chipImg, frameImg } from "@/utils";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { animateWithGsapTrigger } from "@/utils/animations";
 
 const Gaming = () => {
   const frameVideo = "/assets/videos/frame.mp4";
@@ -13,18 +14,21 @@ const Gaming = () => {
       gsap.from("#chip", {
         opacity: 0,
         scale: 2,
-        duration: 2,
+        duration: 1.5,
         ease: "power2.inOut",
         scrollTrigger: {
           trigger: "#chip",
           start: "top 50%",
         },
       });
+      animateWithGsapTrigger('#gaming-text-1', { y: 0, opacity: 1 })
+      animateWithGsapTrigger('#gaming-text-2', { y: 0, opacity: 1 })
+      animateWithGsapTrigger('#gaming-text-3', { y: 0, opacity: 1 })
     };
 
     const delay = setTimeout(() => {
       runAnimation();
-    }, 3000);
+    }, 2000);
 
     return () => {
       clearTimeout(delay);
@@ -68,16 +72,16 @@ const Gaming = () => {
         </p>
       </div>
 
-      <div className="w-[692px] flex justify-between items-start mx-auto">
-        <div className="flex-center flex-col text-gray font-semibold w-1/2">
-          <p>
+      <div id="text-container" className="w-full flex flex-col md:flex-row justify-center items-start gap-x-[10vw] mx-auto px-5 text-[18px] md:text-[24px] leading-snug md:leading-tight">
+        <div className="flex-center flex-col text-gray font-semibold w-full md:w-[40%]">
+          <p id="gaming-text-1" className="opacity-0 translate-y-10">
             A17 Pro is an entirely new class of iPhone chip that delivers our{" "}
             <span className="text-white">
               best graphics performance by far.
             </span>
           </p>
           <br />
-          <p>
+          <p id="gaming-text-2" className="opacity-0 translate-y-10">
             Mobile{" "}
             <span className="text-white">
               games will look and feel so immersive
@@ -88,9 +92,9 @@ const Gaming = () => {
           </p>
         </div>
 
-        <div className="flex justify-start items-start flex-col font-semibold w-auto">
+        <div className="flex justify-start items-start flex-col gap-y-1 font-semibold w-auto mt-5 md:mt-0">
           <h2 className="text-gray">New</h2>
-          <h1 className="text-white">Pro-class GPU</h1>
+          <h1 className="text-white text-3xl md:text-4xl">Pro-class GPU</h1>
           <h2 className="text-gray">with 6 cores</h2>
         </div>
       </div>

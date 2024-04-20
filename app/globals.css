@@ -69,7 +69,7 @@ canvas {
   }
 
   .feature-text {
-    @apply text-gray w-[75%] text-lg md:text-xl font-semibold opacity-0 translate-y-[100px]
+    @apply text-gray w-full md:w-[75%] text-lg md:text-xl font-semibold opacity-0 translate-y-[100px] leading-snug md:leading-tight
   }
 
   .feature-text-container {
