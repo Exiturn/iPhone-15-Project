@@ -80,6 +80,10 @@ canvas {
     @apply w-full h-full object-cover object-center scale-150 opacity-0
   }
 
+  .feature-iguana {
+    @apply w-full h-full object-cover object-center scale-150
+  }
+
   .feature-video-container {
     @apply w-full flex flex-col md:flex-row gap-5 items-center
   }
