@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { iguanaImg } from "@/utils";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CameraCarousel from "./CameraCarousel";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
 const Camera = () => {
   const scaleRef = useRef();
@@ -99,18 +100,24 @@ const Camera = () => {
           </p>
         </div>
 
-        <div id="camera-gallery" className="w-full flex flex-col h-[50vh] relative pt-[60px]">
+        <div
+          id="camera-gallery"
+          className="w-full flex flex-col h-[50vh] relative pt-[60px]"
+        >
           <CameraCarousel />
           <div className="w-full md:w-[692px] lg:w-[980px] mx-auto text-center">
             Helo man
           </div>
-          <div id="paddle-nav" className="mt-10 place-self-end md:absolute md:right-[calc(50%-692px/2)] lg:right-[calc(50%-980px/2)] md:bottom-0">
+          <div
+            id="paddle-nav"
+            className="mt-10 place-self-end md:absolute md:right-[calc(50%-692px/2)] lg:right-[calc(50%-980px/2)] md:bottom-0"
+          >
             <ul className="flex justify-center items-center">
-              <li className="bg-[#333336] color-white block w-[36px] h-[36px] rounded-full overflow-hidden cursor-pointer relative mr-4">
-
+              <li className="bg-[#333336] color-white flex justify-center items-center w-[36px] h-[36px] p-1 rounded-full overflow-hidden cursor-pointer mr-4">
+                <IoIosArrowBack color="white"/>
               </li>
-              <li className="bg-[#333336] color-white block w-[36px] h-[36px] rounded-full overflow-hidden cursor-pointer relative">
-
+              <li className="bg-[#333336] color-white flex justify-center items-center w-[36px] h-[36px] p-1 rounded-full overflow-hidden cursor-pointer">
+                <IoIosArrowForward color="white"/>
               </li>
             </ul>
           </div>

@@ -3,6 +3,13 @@ import {
   blueImg,
   whiteImg,
   yellowImg,
+  carouselImg1,
+  carouselImg2,
+  carouselImg3,
+  carouselImg4,
+  carouselImg5,
+  carouselImg6,
+  carouselImg7,
 } from "../utils";
 
 export const navItems = [
@@ -346,6 +353,51 @@ export const menuData = [
     ],
   },
 ];
+
+export const cameraCarouselSlides = [
+  {
+    id: 'macro',
+    imageText: 'Ultra Wide | Macro',
+    magnifier: '0.5x',
+    imgSrc: carouselImg1,
+  },
+  {
+    id: '13mm',
+    imageText: 'Ultra Wide | Macro',
+    magnifier: '0.5x',
+    imgSrc: carouselImg2,
+  },
+  {
+    id: '24mm',
+    imageText: 'Main | 24mm',
+    magnifier: '1x',
+    imgSrc: carouselImg3,
+  },
+  {
+    id: '28mm',
+    imageText: 'Main | 28mm',
+    magnifier: '1x',
+    imgSrc: carouselImg4,
+  },
+  {
+    id: '35mm',
+    imageText: 'Main | 35mm',
+    magnifier: '1x',
+    imgSrc: carouselImg5,
+  },
+  {
+    id: '48mm',
+    imageText: 'Telephoto | 48mm',
+    magnifier: '2x',
+    imgSrc: carouselImg6,
+  },
+  {
+    id: '120mm',
+    imageText: 'Telephoto | 120mm',
+    magifier: 'New 5x',
+    imgSrc: carouselImg7,
+  }
+]
 
 export const hightlightsSlides = [
   {

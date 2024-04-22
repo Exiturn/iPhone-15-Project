@@ -27,6 +27,14 @@ import chip from "/public/assets/images/chip.jpeg";
 import frame from "/public/assets/images/frame.png";
 import iguana from "/public/assets/images/iguana.webp";
 
+import carousel1 from '/public/assets/images/camera-carousel-1.jpg'
+import carousel2 from '/public/assets/images/camera-carousel-2.jpg'
+import carousel3 from '/public/assets/images/camera-carousel-3.jpg'
+import carousel4 from '/public/assets/images/camera-carousel-4.jpg'
+import carousel5 from '/public/assets/images/camera-carousel-5.jpg'
+import carousel6 from '/public/assets/images/camera-carousel-6.jpg'
+import carousel7 from '/public/assets/images/camera-carousel-7.jpg'
+
 // export const heroVideo = hmv.src;
 // export const smallHeroVideo = smallmv.src;
 // export const exploreVideo = exploremv.src;
@@ -51,3 +59,11 @@ export const explore2Img = explore2;
 export const chipImg = chip;
 export const frameImg = frame;
 export const iguanaImg = iguana;
+
+export const carouselImg1 = carousel1;
+export const carouselImg2 = carousel2;
+export const carouselImg3 = carousel3;
+export const carouselImg4 = carousel4;
+export const carouselImg5 = carousel5;
+export const carouselImg6 = carousel6;
+export const carouselImg7 = carousel7;
