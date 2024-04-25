@@ -11,13 +11,13 @@ const CameraCarousel = () => {
       >
         <ul
           id="item-container"
-          className="m-0 relative grid gap-[10px] grid-flow-col w-fit pl-[calc(50%-274px/2)] md:pl-[calc(50%-692px/2)] list-none"
+          className="m-0 relative grid gap-[10px] grid-flow-col w-fit md:pl-[calc(50%-692px/2)] list-none"
         >
           {cameraCarouselSlides.map((slide, index) => (
             <li
               id="gallery-item"
               key={index}
-              className="relative w-[274px] md:w-[692px] min-h-[370px] md:min-h-[490px] scroll-snap list-none"
+              className="relative w-screen int:w-[653px] sm:w-[692px] min-h-[370px] md:min-h-[490px] scroll-snap list-none"
             >
               <div id="card-item" className="h-full w-full">
                 <div
@@ -30,12 +30,12 @@ const CameraCarousel = () => {
                   <img
                     src={slide.imgSrc.src}
                     alt={slide.imageText}
-                    className="w-full h-full object-contain hidden md:block"
+                    className="w-full h-full object-contain hidden int:block"
                   />
                   <img
                     src={slide.imgSrcSmall.src}
                     alt={slide.imageText}
-                    className="w-full h-full object-contain block md:hidden"
+                    className="w-full h-full object-contain block int:hidden"
                   />
                 </div>
               </div>
@@ -47,7 +47,7 @@ const CameraCarousel = () => {
       <div className="w-full md:w-[692px] lg:w-[980px] mx-auto text-center mt-[35px]">
         Helo man
       </div>
-      
+
       <div
         id="paddle-nav"
         className="mt-10 place-self-end md:absolute md:right-[calc(50%-692px/2)] lg:right-[calc(50%-980px/2)] md:bottom-0"

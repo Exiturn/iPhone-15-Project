@@ -92,7 +92,7 @@ const Camera = () => {
 
       <div className="mt-20 w-full">
         <div className="w-full md:w-[1120px] mx-auto">
-          <p className="text-gray font-semibold relative w-full md:w-[30%] z-[1] ml-[calc(50%-274px/2)] md:ml-[calc(50%-692px/2)] text-xl">
+          <p className="text-gray font-semibold relative w-full md:w-[30%] z-[1]  md:ml-[calc(50%-692px/2)] text-xl">
             With iPhone 15 Pro, you have multiple focal lengths to work with.
             It’s like having{" "}
             <span className="text-white">seven pro lenses in your pocket</span>,
