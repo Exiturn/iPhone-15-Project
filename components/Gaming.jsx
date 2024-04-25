@@ -62,7 +62,7 @@ const Gaming = () => {
             />
           </div>
           <div className="absolute h-[90%] w-[95%] overflow-hidden rounded-md md:rounded-[56px]">
-            <video autoPlay className="pointer-events-none">
+            <video playsInline autoPlay className="pointer-events-none">
               <source src={frameVideo} type="video/mp4" />
             </video>
           </div>

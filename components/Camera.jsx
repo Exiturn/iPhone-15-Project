@@ -92,7 +92,7 @@ const Camera = () => {
 
       <div className="mt-20 w-full">
         <div className="w-full md:w-[1120px] mx-auto">
-          <p className="text-gray font-semibold relative w-full md:w-[40%] z-[1] md:ml-[16.7%] text-xl">
+          <p className="text-gray font-semibold relative w-full md:w-[40%] z-[1] ml-[calc(50%-274px/2)] md:ml-[calc(50%-692px/2)] text-xl">
             With iPhone 15 Pro, you have multiple focal lengths to work with.
             It’s like having{" "}
             <span className="text-white">seven pro lenses in your pocket</span>,
@@ -102,25 +102,9 @@ const Camera = () => {
 
         <div
           id="camera-gallery"
-          className="w-full flex flex-col h-[50vh] relative pt-[60px]"
+          className="w-full flex flex-col relative pt-[60px]"
         >
           <CameraCarousel />
-          <div className="w-full md:w-[692px] lg:w-[980px] mx-auto text-center">
-            Helo man
-          </div>
-          <div
-            id="paddle-nav"
-            className="mt-10 place-self-end md:absolute md:right-[calc(50%-692px/2)] lg:right-[calc(50%-980px/2)] md:bottom-0"
-          >
-            <ul className="flex justify-center items-center">
-              <li className="bg-[#333336] color-white flex justify-center items-center w-[36px] h-[36px] p-1 rounded-full overflow-hidden cursor-pointer mr-4">
-                <IoIosArrowBack color="white"/>
-              </li>
-              <li className="bg-[#333336] color-white flex justify-center items-center w-[36px] h-[36px] p-1 rounded-full overflow-hidden cursor-pointer">
-                <IoIosArrowForward color="white"/>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
