@@ -34,6 +34,13 @@ import carousel4 from '/public/assets/images/camera-carousel-4.jpg'
 import carousel5 from '/public/assets/images/camera-carousel-5.jpg'
 import carousel6 from '/public/assets/images/camera-carousel-6.jpg'
 import carousel7 from '/public/assets/images/camera-carousel-7.jpg'
+import carousel1small from '/public/assets/images/camera-carousel-1-sm.jpg'
+import carousel2small from '/public/assets/images/camera-carousel-2-sm.jpg'
+import carousel3small from '/public/assets/images/camera-carousel-3-sm.jpg'
+import carousel4small from '/public/assets/images/camera-carousel-4-sm.jpg'
+import carousel5small from '/public/assets/images/camera-carousel-5-sm.jpg'
+import carousel6small from '/public/assets/images/camera-carousel-6-sm.jpg'
+import carousel7small from '/public/assets/images/camera-carousel-7-sm.jpg'
 
 // export const heroVideo = hmv.src;
 // export const smallHeroVideo = smallmv.src;
@@ -67,3 +74,10 @@ export const carouselImg4 = carousel4;
 export const carouselImg5 = carousel5;
 export const carouselImg6 = carousel6;
 export const carouselImg7 = carousel7;
+export const carouselImg1small = carousel1small;
+export const carouselImg2small = carousel2small;
+export const carouselImg3small = carousel3small;
+export const carouselImg4small = carousel4small;
+export const carouselImg5small = carousel5small;
+export const carouselImg6small = carousel6small;
+export const carouselImg7small = carousel7small;

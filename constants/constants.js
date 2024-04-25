@@ -10,6 +10,13 @@ import {
   carouselImg5,
   carouselImg6,
   carouselImg7,
+  carouselImg1small,
+  carouselImg2small,
+  carouselImg3small,
+  carouselImg4small,
+  carouselImg5small,
+  carouselImg6small,
+  carouselImg7small,
 } from "../utils";
 
 export const navItems = [
@@ -360,42 +367,49 @@ export const cameraCarouselSlides = [
     imageText: 'Ultra Wide | Macro',
     magnifier: '0.5x',
     imgSrc: carouselImg1,
+    imgSrcSmall: carouselImg1small
   },
   {
     id: '13mm',
     imageText: 'Ultra Wide | Macro',
     magnifier: '0.5x',
     imgSrc: carouselImg2,
+    imgSrcSmall: carouselImg2small
   },
   {
     id: '24mm',
     imageText: 'Main | 24mm',
     magnifier: '1x',
     imgSrc: carouselImg3,
+    imgSrcSmall: carouselImg3small
   },
   {
     id: '28mm',
     imageText: 'Main | 28mm',
     magnifier: '1x',
     imgSrc: carouselImg4,
+    imgSrcSmall: carouselImg4small
   },
   {
     id: '35mm',
     imageText: 'Main | 35mm',
     magnifier: '1x',
     imgSrc: carouselImg5,
+    imgSrcSmall: carouselImg5small
   },
   {
     id: '48mm',
     imageText: 'Telephoto | 48mm',
     magnifier: '2x',
     imgSrc: carouselImg6,
+    imgSrcSmall: carouselImg6small
   },
   {
     id: '120mm',
     imageText: 'Telephoto | 120mm',
     magifier: 'New 5x',
     imgSrc: carouselImg7,
+    imgSrcSmall: carouselImg7small
   }
 ]
 

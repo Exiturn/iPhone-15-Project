@@ -51,7 +51,7 @@ const Camera = () => {
   }, []);
 
   return (
-    <section className="w-screen h-full py-10 md:py-24 px-5 sm:px-10 flex flex-col justify-start items-start">
+    <section className="w-screen h-full py-10 md:py-24 px-5 sm:px-10 flex flex-col justify-start items-start overflow-hidden">
       <div className="lg:w-[1120px] mx-auto">
         <div className="w-full lg:w-[960px] ms-auto me-auto">
           <h1 className="text-white w-full md:w-[80%] lg:w-full md:mx-auto lg:mx-0 lg:text-7xl md:text-5xl text-[2.25rem] md:mb-0 mb-5 font-semibold tracking-tighter leading-none relative z-[1]">
@@ -92,7 +92,7 @@ const Camera = () => {
 
       <div className="mt-20 w-full">
         <div className="w-full md:w-[1120px] mx-auto">
-          <p className="text-gray font-semibold relative w-full md:w-[40%] z-[1] ml-[calc(50%-274px/2)] md:ml-[calc(50%-692px/2)] text-xl">
+          <p className="text-gray font-semibold relative w-full md:w-[30%] z-[1] ml-[calc(50%-274px/2)] md:ml-[calc(50%-692px/2)] text-xl">
             With iPhone 15 Pro, you have multiple focal lengths to work with.
             It’s like having{" "}
             <span className="text-white">seven pro lenses in your pocket</span>,
@@ -102,7 +102,7 @@ const Camera = () => {
 
         <div
           id="camera-gallery"
-          className="w-full flex flex-col relative pt-[60px]"
+          className="w-full flex flex-col relative pt-[30px] md:pt-[60px]"
         >
           <CameraCarousel />
         </div>
