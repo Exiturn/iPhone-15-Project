@@ -407,7 +407,7 @@ export const cameraCarouselSlides = [
   {
     id: '120mm',
     imageText: 'Telephoto | 120mm',
-    magifier: 'New 5x',
+    magnifier: 'New 5x',
     imgSrc: carouselImg7,
     imgSrcSmall: carouselImg7small
   }

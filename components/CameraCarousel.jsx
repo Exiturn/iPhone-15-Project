@@ -10,15 +10,23 @@ const CameraCarousel = () => {
   let slideText = cameraCarouselSlides[currentSlide].imageText;
   let slideMagnifier = cameraCarouselSlides[currentSlide].magnifier;
 
-  const handleSlideChange = (e, direction) => {
+  const handleSlideChange = (direction) => {
     switch (direction) {
       case "next":
         setCurrentSlide(currentSlide + 1);
-        currentSlideRef.current.nextElementSibling.scrollIntoView();
+        gsap.to("#gallery-item", {
+          transform: `translateX(${-100 * (currentSlide + 1)}%)`,
+          duration: 1,
+          ease: "power2.inOut",
+        });
         break;
       case "prev":
         setCurrentSlide(currentSlide - 1);
-        currentSlideRef.current.previousElementSibling.scrollIntoView();
+        gsap.to("#gallery-item", {
+          transform: `translateX(${-100 * (currentSlide - 1)}%)`,
+          duration: 1,
+          ease: "power2.inOut",
+        });
         break;
     }
   };
@@ -31,7 +39,7 @@ const CameraCarousel = () => {
       >
         <ul
           id="item-container"
-          className="m-0 relative grid gap-[10px] grid-flow-col w-fit md:pl-[calc(50%-692px/2)] list-none"
+          className="m-0 relative grid int:gap-[10px] grid-flow-col w-fit md:pl-[calc(50%-692px/2)] list-none"
         >
           {cameraCarouselSlides.map((slide, index) => (
             <li
@@ -42,7 +50,7 @@ const CameraCarousel = () => {
             >
               <div
                 id="card-item"
-                className={`h-full w-full transition-all duration-75 ease-in-out ${
+                className={`h-full w-full transition-all duration-500 ease-in-out ${
                   index === currentSlide ? "opacity-100" : "opacity-[0.3]"
                 }`}
               >
@@ -81,10 +89,16 @@ const CameraCarousel = () => {
         className="mt-10 place-self-end int:absolute int:right-[calc(50%-692px/2)] lg:right-[calc(50%-980px/2)] int:bottom-0"
       >
         <ul className="flex justify-center items-center">
-          <li className="bg-[#333336] color-white flex justify-center items-center w-[36px] h-[36px] p-1 rounded-full overflow-hidden cursor-pointer mr-4">
+          <li
+            onClick={() => handleSlideChange("prev")}
+            className={`bg-[#333336] color-white flex justify-center items-center w-[36px] h-[36px] p-1 rounded-full overflow-hidden ${currentSlide === 0 ? 'opacity-50 pointer-events-none' : 'cursor-pointer'} mr-4`}
+          >
             <IoIosArrowBack color="white" size={23} />
           </li>
-          <li className="bg-[#333336] color-white flex justify-center items-center w-[36px] h-[36px] p-1 rounded-full overflow-hidden cursor-pointer">
+          <li
+            onClick={() => handleSlideChange("next")}
+            className={`bg-[#333336] color-white flex justify-center items-center w-[36px] h-[36px] p-1 rounded-full overflow-hidden cursor-pointer ${currentSlide + 1 === cameraCarouselSlides.length ? 'opacity-50 pointer-events-none' : 'cursor-pointer'}`}
+          >
             <IoIosArrowForward color="white" size={23} />
           </li>
         </ul>
