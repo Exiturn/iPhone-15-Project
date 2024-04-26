@@ -15,7 +15,7 @@ const CameraCarousel = () => {
       case "next":
         setCurrentSlide(currentSlide + 1);
         gsap.to("#gallery-item", {
-          transform: `translateX(${-100 * (currentSlide + 1)}%)`,
+          transform: `translateX(calc(${-100 * (currentSlide + 1)}% - 15px)`,
           duration: 1,
           ease: "power2.inOut",
         });
@@ -23,7 +23,7 @@ const CameraCarousel = () => {
       case "prev":
         setCurrentSlide(currentSlide - 1);
         gsap.to("#gallery-item", {
-          transform: `translateX(${-100 * (currentSlide - 1)}%)`,
+          transform: `translateX(${-100 * (currentSlide - 1)}% + 15px)`,
           duration: 1,
           ease: "power2.inOut",
         });
@@ -50,7 +50,7 @@ const CameraCarousel = () => {
             >
               <div
                 id="card-item"
-                className={`h-full w-full transition-all duration-500 ease-in-out ${
+                className={`h-full w-full transition-all duration-1000 ease-in-out ${
                   index === currentSlide ? "opacity-100" : "opacity-[0.3]"
                 }`}
               >
