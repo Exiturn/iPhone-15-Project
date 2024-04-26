@@ -1,8 +1,28 @@
 import { cameraCarouselSlides } from "@/constants/constants";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import { Fragment } from "react";
+import { Fragment, useRef, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const CameraCarousel = () => {
+  const currentSlideRef = useRef([]);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  let slideText = cameraCarouselSlides[currentSlide].imageText;
+  let slideMagnifier = cameraCarouselSlides[currentSlide].magnifier;
+
+  const handleSlideChange = (e, direction) => {
+    switch (direction) {
+      case "next":
+        setCurrentSlide(currentSlide + 1);
+        currentSlideRef.current.nextElementSibling.scrollIntoView();
+        break;
+      case "prev":
+        setCurrentSlide(currentSlide - 1);
+        currentSlideRef.current.previousElementSibling.scrollIntoView();
+        break;
+    }
+  };
+
   return (
     <Fragment>
       <div
@@ -15,11 +35,17 @@ const CameraCarousel = () => {
         >
           {cameraCarouselSlides.map((slide, index) => (
             <li
+              ref={(el) => (currentSlideRef.current[index] = el)}
               id="gallery-item"
               key={index}
               className="relative w-screen int:w-[653px] sm:w-[692px] min-h-[370px] md:min-h-[490px] scroll-snap list-none"
             >
-              <div id="card-item" className="h-full w-full">
+              <div
+                id="card-item"
+                className={`h-full w-full transition-all duration-75 ease-in-out ${
+                  index === currentSlide ? "opacity-100" : "opacity-[0.3]"
+                }`}
+              >
                 <div
                   id="card-img-wrapper"
                   className="relative w-full h-full overflow-hidden flex justify-center items-center"
@@ -44,13 +70,15 @@ const CameraCarousel = () => {
         </ul>
       </div>
 
-      <div className="w-full md:w-[692px] lg:w-[980px] mx-auto text-center mt-[35px]">
-        Helo man
+      <div className="w-full md:w-[692px] lg:w-[980px] mx-auto int:pr-[40px] md:pr-0 text-center mt-[35px]">
+        <p className="font-semibold text-gray text-lg">
+          <span className="text-white">{slideMagnifier}</span> {slideText}
+        </p>
       </div>
 
       <div
         id="paddle-nav"
-        className="mt-10 place-self-end md:absolute md:right-[calc(50%-692px/2)] lg:right-[calc(50%-980px/2)] md:bottom-0"
+        className="mt-10 place-self-end int:absolute int:right-[calc(50%-692px/2)] lg:right-[calc(50%-980px/2)] int:bottom-0"
       >
         <ul className="flex justify-center items-center">
           <li className="bg-[#333336] color-white flex justify-center items-center w-[36px] h-[36px] p-1 rounded-full overflow-hidden cursor-pointer mr-4">
