@@ -15,7 +15,7 @@ const CameraCarousel = () => {
       case "next":
         setCurrentSlide(currentSlide + 1);
         gsap.to("#gallery-item", {
-          transform: `translateX(calc(${-100 * (currentSlide + 1)}% - 15px)`,
+          transform: `translateX(${-100 * (currentSlide + 1)}% )`,
           duration: 1,
           ease: "power2.inOut",
         });
@@ -23,7 +23,7 @@ const CameraCarousel = () => {
       case "prev":
         setCurrentSlide(currentSlide - 1);
         gsap.to("#gallery-item", {
-          transform: `translateX(${-100 * (currentSlide - 1)}% + 15px)`,
+          transform: `translateX(${-100 * (currentSlide - 1)}% )`,
           duration: 1,
           ease: "power2.inOut",
         });
@@ -46,7 +46,7 @@ const CameraCarousel = () => {
               ref={(el) => (currentSlideRef.current[index] = el)}
               id="gallery-item"
               key={index}
-              className="relative w-screen int:w-[653px] sm:w-[692px] min-h-[370px] md:min-h-[490px] scroll-snap list-none"
+              className={`relative w-screen int:w-[653px] sm:w-[692px] min-h-[370px] md:min-h-[490px] scroll-snap list-none`}
             >
               <div
                 id="card-item"
@@ -91,13 +91,21 @@ const CameraCarousel = () => {
         <ul className="flex justify-center items-center">
           <li
             onClick={() => handleSlideChange("prev")}
-            className={`bg-[#333336] color-white flex justify-center items-center w-[36px] h-[36px] p-1 rounded-full overflow-hidden ${currentSlide === 0 ? 'opacity-50 pointer-events-none' : 'cursor-pointer'} mr-4`}
+            className={`bg-[#333336] color-white flex justify-center items-center w-[36px] h-[36px] p-1 rounded-full overflow-hidden ${
+              currentSlide === 0
+                ? "opacity-50 pointer-events-none"
+                : "cursor-pointer"
+            } mr-4`}
           >
             <IoIosArrowBack color="white" size={23} />
           </li>
           <li
             onClick={() => handleSlideChange("next")}
-            className={`bg-[#333336] color-white flex justify-center items-center w-[36px] h-[36px] p-1 rounded-full overflow-hidden cursor-pointer ${currentSlide + 1 === cameraCarouselSlides.length ? 'opacity-50 pointer-events-none' : 'cursor-pointer'}`}
+            className={`bg-[#333336] color-white flex justify-center items-center w-[36px] h-[36px] p-1 rounded-full overflow-hidden cursor-pointer ${
+              currentSlide + 1 === cameraCarouselSlides.length
+                ? "opacity-50 pointer-events-none"
+                : "cursor-pointer"
+            }`}
           >
             <IoIosArrowForward color="white" size={23} />
           </li>

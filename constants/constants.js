@@ -361,6 +361,44 @@ export const menuData = [
   },
 ];
 
+export const footerData = [
+  {
+    header: 'Explore iPhone',
+    subMenu: [
+      'Explore All iPhone',
+      'iPhone 15 Pro',
+      'iPhone 15',
+      'iPhone 14',
+      'iPhone 13',
+      'iPhone SE',
+      'Compare iPhone',
+      'Switch from Android',
+    ],
+  },
+  {
+    header: 'Shop iPhone',
+    subMenu: [
+      'Shop iPhone',
+      'iPhone Accessories',
+      'Apple Trade In',
+      'Financing',
+    ],
+  },
+  {
+    header: 'More from iPhone',
+    subMenu: [
+      'iPhone Support',
+      'AppleCare+ for iPhone',
+      'iOS 17',
+      'Apps by Apple',
+      'iPhone Privacy',
+      'iCloud+',
+      'Wallet, Pay',
+      'Siri',
+    ],
+  }
+]
+
 export const cameraCarouselSlides = [
   {
     id: 'macro',
